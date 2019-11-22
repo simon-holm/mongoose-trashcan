@@ -2,15 +2,15 @@
 
 Eat & Keep the 🍰
 
-Delete documents as you normally do but have them automagically end up in an archived collection.
+Delete documents as you normally do but have them automagically end up in an archived collection - just in case you need to pull something out of the trash.
 
 ## How
 
 ### Hook up the provided model to your db
 
 ```javascript
-import { ArchivedItem } from "mongoose-trashcan";
 /* Together with the rest of your Models */
+import { ArchivedItem } from "mongoose-trashcan";
 ```
 
 ### Plug-in the Plugin
