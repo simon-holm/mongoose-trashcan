@@ -17,6 +17,7 @@ yarn add mongoose-trashcan
 ### Create a Mongoose Model for archived items
 
 See the example folder for implementation in JS, Typescript and Typegoose. Copy 🍝
+src/example/\*
 
 ```javascript
 // Example Model Schema using Mongoose and JS
