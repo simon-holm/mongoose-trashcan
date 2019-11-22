@@ -8,6 +8,11 @@
   },
   "author": "Simon Holm",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spixooze/mongoose-trashcan.git"
+  },
+  "homepage": "https://github.com/spixooze/mongoose-trashcan#README.md",
   "keywords": [
     "mongoose",
     "typegoose",
