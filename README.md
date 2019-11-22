@@ -37,12 +37,12 @@ class YourTypegooseClass {
 Restore an archived item by calling the restore method.
 This requires your own logic of what to do with the archived document, what model should be recreated etc.
 
-```javascript
-/* Find an archived item by its id or querying based on the type of document you have archived.
-  Based on the name of the collection the archived document came from (originCollection) you can discern what model should be used to recreate the document.
+Based on the name of the collection the archived document came from (originCollection) you can discern what model should be used to recreate the document.
 
-  In the example we assume the archived document is a user from a collection called users.
-*/
+In the example we assume the archived document is a user from a collection called users.
+
+```javascript
+// Find archived item by its id or query based on the type of document you archived.
 
 const archivedItem = await ArchivedItem.findById(someId)
 
