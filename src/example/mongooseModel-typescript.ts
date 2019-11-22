@@ -1,3 +1,8 @@
+/**
+ *
+ * Example model for the ArchiveItemModel in a Typescript project using Mongoose
+ */
+
 import { Schema, model, Document, Model } from "mongoose";
 
 export interface IArchivedItem extends Document {
@@ -11,10 +16,12 @@ export interface IArchivedItem extends Document {
 const archivedItemSchema = new Schema(
   {
     originCollection: {
-      type: String
+      type: String,
+      required: true
     },
     doc: {
-      type: Schema.Types.Mixed
+      type: Schema.Types.Mixed,
+      required: true
     }
   },
   {
@@ -33,8 +40,8 @@ archivedItemSchema.methods.restore = async function(
   }
 };
 
-const ArchivedItem: Model<IArchivedItem> = model<IArchivedItem>(
+const ArchivedItemModel: Model<IArchivedItem> = model<IArchivedItem>(
   "ArchivedItem",
   archivedItemSchema
 );
-export { ArchivedItem };
+export { ArchivedItemModel };

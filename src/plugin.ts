@@ -1,11 +1,25 @@
-import { Schema } from "mongoose";
-import { ArchivedItem } from "./model";
+import { Schema, Model, Document } from "mongoose";
+
+interface IArchivedItem extends Document {
+  originCollection: string;
+  doc: any;
+  restore: (
+    restoreGlueFn: (originCollection: string, doc: any) => Promise<void>
+  ) => Promise<void>;
+}
 
 interface Options {
   throwOnError: boolean;
+  ArchivedItemModel: Model<IArchivedItem, {}>;
 }
 
+const anyDeleteOrRemove = /remove|deleteOne|deleteMany|findOneAndRemove|findOneAndDelete|findByIdAndRemove/;
+
 function trashcan(schema: Schema, options: Options) {
+  if (!options || (options && !options.ArchivedItemModel)) {
+    throw "ArchivedItemModel must be provided to the trashcan plugin options";
+  }
+
   schema.pre(
     anyDeleteOrRemove,
     // @ts-ignore
@@ -29,7 +43,7 @@ function trashcan(schema: Schema, options: Options) {
 
         if (docs.length > 0) {
           for (let doc of docs) {
-            await ArchivedItem.create({
+            await options.ArchivedItemModel.create({
               originCollection,
               doc
             });
@@ -39,7 +53,7 @@ function trashcan(schema: Schema, options: Options) {
         if (options && options.throwOnError) {
           throw error;
         } else {
-          console.warn("Failed to archive document", error);
+          console.log("Failed to archive document", error);
         }
       }
     }
@@ -60,5 +74,3 @@ const isMongooseQuery = (obj: any) => {
 
   return false;
 };
-
-const anyDeleteOrRemove = /remove|deleteOne|deleteMany|findOneAndRemove|findOneAndDelete|findByIdAndRemove/;
