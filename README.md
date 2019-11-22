@@ -1,8 +1,8 @@
 # Mongoose Trashcan 🗑
 
-Eat & Keep the 🍰
+Eat & Keep the 🍰 with the Mongoose Trashcan Plugin
 
-Delete documents as you normally do but have them automagically end up in an archived collection - just in case you need to pull something out of the trash.
+Delete documents as you normally do but have them automagically end up in an archived collection - just in case you need to pull something out of the trash in the future.
 
 ## How
 
