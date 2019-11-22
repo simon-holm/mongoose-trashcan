@@ -1,0 +1,29 @@
+{
+  "name": "mongoose-trashcan",
+  "version": "1.0.0",
+  "description": "Mongoose softDelete Plugin that puts deleted documents in an archived collection",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc && echo 'Mongoose-Traschan Package Compiled 🗑'"
+  },
+  "author": "Simon Holm",
+  "license": "MIT",
+  "keywords": [
+    "mongoose",
+    "typegoose",
+    "soft",
+    "delete",
+    "remove",
+    "softdelete",
+    "archive",
+    "archiving",
+    "plugin"
+  ],
+  "dependencies": {
+    "mongoose": "^5.7.12"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^5.5.32",
+    "typescript": "^3.7.2"
+  }
+}
