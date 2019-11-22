@@ -1,6 +1,6 @@
 {
   "name": "mongoose-trashcan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mongoose softDelete Plugin that puts deleted documents in an archived collection",
   "main": "lib/index.js",
   "scripts": {
